@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+:root {
+  --cor-fundo: #000;
+  --cor-primary: #12e066;
+  --cor-hover: linear-gradient(to right, #608057, #12e066);
+  --cor-footer: #fff;
+}
+
+body {
+  min-width: 300px;
+  background-image: url(/assets/resources/img/fundo_preto.png);
+}
+/* confugurações do nav */
+.rede_social {
+  display: flex;
+  justify-content: center;
+  background-color: #12e066;
+}
+
+#botao-menu {
+  width: 50%;
+  border-radius: 5px;
+  background: #12e066;
+  border: none;
+  color: #fff;
+  font-family: 'inter';
+  font-size: 2.5min;
+  border-radius: 0px 0px 2px 2px;
+  display: flex;
+  justify-content: center;
+}
+.boton {
+  display: flex;
+  justify-content: center;
+}
+#btn-manage-users {
+  display: flex;
+  justify-content: center;
+  background: var(--cor-hover);
+  border-radius: 2px 1px 2px 1px;
+  border: none;
+  outline: none;
+  min-width: 40%;
+  justify-content: center;
+  display: flex;
+  padding: 11px;
+
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 2vmin;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+}
+.links i {
+  font-size: 1.7em;
+  transition: all 0.6s;
+  color: aliceblue;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 4px;
+}
+
+.links:hover i {
+  transform: rotate(-15deg);
+}
+
+.links:hover i.linkedin {
+  color: #1da1f2;
+}
+.links:hover i.instagram {
+  color: #ad24ec;
+}
+.links:hover i.github {
+  color: #2b3033;
+}
+/* configurações conteudo principal */
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+#img-logo {
+  width: 30%;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#img-logo:hover {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.content-main {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  padding: 6em 0;
+}
+.placeholder {
+  color: #fff;
+}
+
+/* card do form */
+#form-one,
+#form-two {
+  background-color: var(--cor-fundo);
+  border-radius: 10px 5px 10px 5px;
+  box-shadow: 10px 5px 10px 5px var(--cor-primary);
+
+  padding: 20px;
+}
+
+#form-one {
+  display: block;
+}
+
+#form-two {
+  display: none;
+}
+#user-form {
+  padding: 0 2em;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.typing {
+  animation: typing 3s steps(22), blink 0.5s step-end infinite alternate;
+
+  width: 86%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* caixa definida para separar os inputs */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  padding-top: 15%;
+}
+.title-users {
+  font-size: 2.5vmin;
+  font-family: 'Inter';
+  text-transform: lowercase;
+}
+.title-users:hover {
+  opacity: 2s;
+  color: #1c1c1c;
+  transition: all 2s;
+}
+
+.box-made {
+  position: relative;
+  display: flex;
+
+  flex-direction: column;
+  height: 40px;
+}
+.box-made label {
+  cursor: text;
+
+  color: var(--cor-primary);
+  font-size: 2.7vmin;
+  transition: 0.5s;
+  position: relative;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 3.5em 0 2.5em;
+}
+#btn-edit-user,
+#btn-save-edit {
+  margin: 17px;
+}
+
+.btn-form,
+#submit,
+#edit-user-button {
+  border-radius: 2px 1px 2px 1px;
+  border: none;
+  outline: none;
+  min-width: 40%;
+  justify-content: center;
+  display: flex;
+  padding: 11px;
+  background: var(--cor-primary);
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 2vmin;
+}
+#view-Users,
+#btn-edit-user,
+#btn-save-edit {
+  display: flex;
+  margin-left: 20%;
+  margin-top: 10%;
+  border-radius: 2px 1px 2px 1px;
+  border: none;
+  outline: none;
+  min-width: 40%;
+  justify-content: center;
+  display: flex;
+  padding: 11px;
+  background: black;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 2vmin;
+}
+#edit-user-button {
+  margin-top: 10px;
+  margin-left: 20%;
+  background-color: #000;
+}
+#btn-close-modal {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3vh;
+  align-items: center;
+  color: white;
+  background: black;
+  cursor: pointer;
+}
+#submit:hover,
+.btn-form:hover {
+  opacity: 5s;
+  transition: 5s;
+  background: var(--cor-hover);
+  color: #1c1c1c;
+}
+
+.box-made input {
+  position: absolute;
+  background: var(--cor-hover);
+  width: 100%;
+  height: 2px;
+
+  bottom: 0;
+
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  transition: 0.6s;
+
+  padding: 0 8px;
+  font-size: 2.5vmin;
+}
+#edit-name,
+#edit-email {
+  background: var(--cor-hover);
+
+  height: 4vh;
+
+  bottom: 0;
+
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  transition: 0.6s;
+
+  padding: 0 8px;
+  font-size: 2.5vmin;
+  color: #fff;
+}
+
+.box-made input:focus,
+.box-made input:valid {
+  height: 100%;
+}
+
+.box-made input:valid + label {
+  top: -40px;
+  left: 0;
+}
+/* configurações cabecalhos */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: var(--cor-primary);
+  color: var(--cor-footer);
+  height: 10vh;
+}
+#modal-manage-users {
+  display: none;
+  margin-top: 10%;
+}
+@media (min-width: 1300px) {
+  .typing {
+    width: 100%;
+  }
+}

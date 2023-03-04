@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Inter:wght@200&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="assets/resources/styles/style.css" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/css/uikit.min.css" />
+
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <header>
+      <div class="rede_social">
+        <a href="#" class="links">
+          <i class="fa-brands fa-linkedin linkedin"></i>
+        </a>
+        <a href="#" class="links">
+          <i class="fa-brands fa-square-instagram instagram"></i>
+        </a>
+        <a href="#" class="links">
+          <i class="fa-brands fa-square-github github"></i>
+        </a>
+      </div>
+      <div class="boton">
+<button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-overlay"
+                id="botao-menu"><span class="title-users">Gerenciamento de Clientes<span uk-icon="users"></span></span></button>
+
+            <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+      <div class="manage-users">
+        <button id="btn-manage-users">Gerenciar Usuários</button>
+        <div id="modal-manage-users">
+          <button id="btn-close-modal">Close</button>
+
+          <button id="view-Users">Visualizar usuários</button>
+<span uk-icon="file-edit"></span>
+<span uk-icon="trash"></span>
+          <ul id="user-list"></ul>
+          <div id="modalEdit"></div>
+        </div>
+      </div>
+      </div>
+
+    </header>
+
+    <main class="content-main">
+      <form action="#" method="post" id="user-form">
+        <div class="box" id="form-one">
+          <div class="logo">
+            <img
+              src="assets/resources/img/logo-1.png"
+              alt="logo"
+              id="img-logo" />
+          </div>
+          <div class="row">
+            <!-- NOME -->
+            <div class="box-made">
+              <input type="text" id="name" required />
+              <label for="name" placeholder="Digite seu Nome:"
+                >Nome Completo</label
+              >
+            </div>
+            <!-- EMAIL -->
+            <div class="box-made">
+              <input type="email" id="email" required />
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <!-- IDADE -->
+            <div class="box-made">
+              <input type="text" id="birthdate" required/>
+              <label for="birthdate">Data de Nascimento</label>
+            </div>
+            <!-- TELEFONE -->
+            <div class="box-made">
+              <input type="text" id="phone" required />
+              <label for="phone">Telefone</label>
+            </div>
+          </div>
+          <div class="row">
+            <!-- SENHA -->
+            <div class="box-made">
+              <input type="password" id="pass" required minlength="8" />
+              <label for="pass">Senha</label>
+            </div>
+            <!-- CONFIRMAÇÃO DE SENHA -->
+            <div class="box-made">
+              <input
+                type="password"
+                id="confirm-pass"
+                required
+                minlength="8"
+                onblur="validatePassword()" />
+              <label for="confirm-pass">Confirmação de senha</label>
+            </div>
+          </div>
+
+          <div class="button">
+            <button class="btn-form" id="btn-next">Próximo</button>
+          </div>
+        </div>
+
+        <div id="form-two">
+          <div class="typing">
+            <h1 class="slogan">
+              <span style="color: #fff">A gente</span>
+              <span style="color: #12e066">integra,</span>
+              <span style="color: #fff">você</span>
+              <span style="color: #12e066">conecta.</span>
+            </h1>
+          </div>
+          <div class="row">
+            <!-- CEP -->
+            <div class="box-made">
+              <input type="text" id="cep" required />
+              <label for="cep">CEP</label>
+            </div>
+            <!-- APELIDO -->
+            <div class="box-made">
+              <input type="text" id="apelido"  />
+              <label for="apelido">Apelido</label>
+            </div>
+          </div>
+          <div class="row">
+            <!-- LOGRADOURO -->
+            <div class="box-made">
+              <input type="text" id="logradouro" required />
+              <label for="logradouro">Rua</label>
+            </div>
+            <!-- COMPLEMENTO -->
+            <div class="box-made">
+              <input type="text" id="complement" />
+              <label for="complement">Complemento</label>
+            </div>
+          </div>
+          <div class="row">
+            <!-- BAIRRO -->
+            <div class="box-made">
+              <input type="text" id="village" required />
+              <label for="village">Bairro</label>
+            </div>
+            <!-- CIDADE -->
+            <div class="box-made">
+              <input type="text" id="city" required />
+              <label for="city">Cidade</label>
+            </div>
+          </div>
+          <div class="row">
+            <!-- UF -->
+            <div class="box-made">
+              <input type="text" id="uf" required />
+              <label for="uf">UF</label>
+            </div>
+            <!-- CÓDIGO IBGE -->
+            <div class="box-made">
+              <input type="text" id="code" required />
+              <label for="code">Código IBGE</label>
+            </div>
+            <!-- BOTAO -->
+            <div class="button">
+              <button class="btn-form" id="btn-prev">Anterior</button>
+              <button type="submit" id="submit">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <footer class="footer"><p>Copyright©•FiqOn</p></footer>
+    <script src="assets/lib/jquery/dist/jquery.js"></script>
+    <script src="/assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/lib/jQuery-Mask-Plugin-master/dist/jquery.mask.js"></script>
+    <script
+      src="https://kit.fontawesome.com/880f629fe4.js"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="assets/resources/scripts/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit-icons.min.js"></script>
+
+  </body>
+</html>
